@@ -10,10 +10,10 @@
 dict_digit = {"One": "Один", "Two": "Два", "Three": "Три", "Four": "Четыре", "Five": "Пять",
               "Six": "Шесть", "Seven": "Семь", "Eight": "Восемь", "Nine": "Девять", "Zero": "Ноль"}
 
-with open("Lesson4.txt", "r") as f_digits:
+with open("Problem_4.txt", "r") as f_digits:
     l_digits = f_digits.readlines()
 
 # Запишем результат, подменив первое слово значением из словаря
-with open("Lesson4_result.txt", 'w') as f_reuslt:
+with open("Problem4_result.txt", 'w') as f_reuslt:
     for i in l_digits:
         f_reuslt.write(i.replace(i[:i.index(' ')], dict_digit[i[:i.index(' ')]]))

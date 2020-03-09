@@ -2,13 +2,13 @@
 # Определить, кто из сотрудников имеет оклад менее 20 тыс., вывести фамилии этих сотрудников.
 # Выполнить подсчет средней величины дохода сотрудников.
 
-f_persons = open('Lesson3.txt', 'r')
+f_persons = open('Problem_3.txt', 'r')
 persons_raw = f_persons.readlines()
 f_persons.close()
 
 work_tab = {}  # Справочник зарплат
 f_averege = lambda x: sum(x) / len(x)  # Функция подсета среднего значения
-f_smaller = lambda x, y: True if x < y else False  # Функция фозвращает True, если первый аргумент меньшн второго
+f_smaller = lambda x, y: True if x < y else False  # Функция фозвращает True, если первый аргумент меньше второго
 
 # Заполнили справочник
 for item in persons_raw:

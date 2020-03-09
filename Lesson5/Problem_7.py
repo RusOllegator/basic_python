@@ -7,12 +7,11 @@
 # Итоговый список сохранить в виде json-объекта в соответствующий файл.
 # Пример json-объекта:
 # [{"firm_1": 5000, "firm_2": 3000, "firm_3": 1000}, {"average_profit": 2000}]
-from Problem_6 import didgits_of_string  # Воспользуемся готовой ф-ией из предыдущего задания
-import json
+from my_func import didgits_of_string  # Воспользуемся готовой ф-ией из предыдущего задания - не получилось
 from json import dump
 
 # Создаем список из строк файла
-with open('Lesson7.txt', 'r') as f_objects:
+with open('Problem_7.txt', 'r') as f_objects:
     l_objects = f_objects.readlines()
 
 d_firms = {}  # Справочник названий фирм с их прыбылью
@@ -34,5 +33,5 @@ except ZeroDivisionError:
 
 l_result.append({"average_profit": avg_profit})
 
-with open('Lesson7.json', 'w') as f_json:
+with open('Problem_7.json', 'w') as f_json:
     dump(l_result, f_json)
