@@ -109,4 +109,3 @@ print(item_2)
 print(f'Сумма матриц: ')
 print(item_1 + item_2)
 
-print(dir(item_1))
