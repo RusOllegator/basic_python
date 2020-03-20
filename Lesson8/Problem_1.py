@@ -13,22 +13,22 @@ class Date:
         if len(l_date[2]) == 2:
             l_date[2] = '20' + l_date[2]
         try:
-            l_date=[int(item) for item in l_date]
-            return cls.date_validation(l_date[0],l_date[1],l_date[2])
+            l_date = [int(item) for item in l_date]
+            return cls.date_validation(l_date[0], l_date[1], l_date[2])
         except Exception as e:
             return 'Дата передана в неверном формате' + '\n' + str(e)
 
     @staticmethod
-    def date_validation(dd,mm,yyyy):
+    def date_validation(dd, mm, yyyy):
 
         # справочник количества дней в месяце
-        days_in_month = { 1: 31, 2: 28,3: 31,4: 30, 5: 31, 6: 30,
-                          7: 31, 8: 31 , 9: 30 ,10: 31, 11: 30 , 12: 31 }
+        days_in_month = {1: 31, 2: 28, 3: 31, 4: 30, 5: 31, 6: 30,
+                         7: 31, 8: 31, 9: 30, 10: 31, 11: 30, 12: 31}
         # Проверим год на "високостность", изменим справочник если эта проверка пройдет
         if (yyyy % 4 == 0) or (yyyy % 100 == 0 and yyyy % 400 != 0):
             days_in_month[2] = 29
 
-        if not (yyyy > 0 and yyyy < 2999):   #считааем окончание тысячителетия концом эпохи
+        if not (yyyy > 0 and yyyy < 2999):  # считааем окончание тысячителетия концом эпохи
             return 'Дата передана в неверном формате'
 
         if not (mm > 0 and mm < 13):
@@ -40,7 +40,7 @@ class Date:
         return 'Дата передана в верном формате'
 
     def print_date_condition(self):
-        print(Date.extract_date(self.str_date),'\n-----------------')
+        print(Date.extract_date(self.str_date), '\n-----------------')
 
 
 date_1 = Date('14-12-0004')
